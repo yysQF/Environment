@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<woss>
+	<server class="com.briup.environment.serverimpl.ServerImpl">
+		<port>8000</port>
+	</server>
+	<dbstore class="com.briup.environment.serverimpl.DBstoreImpl">
+		<driver>com.mysql.cj.jdbc.Driver</driver>
+		<url>jdbc:mysql://127.0.0.1/envir?characterEncoding=utf8&amp;useSSL=true&amp;serverTimezone=UTC</url>
+		<username>envir</username>
+		<password>123</password>
+		<batch-size>1</batch-size>
+	</dbstore>
+	<client class="com.briup.environment.clientimpl.ClientImpl">
+		<ip>127.0.0.1</ip>
+		<port>8000</port>
+	</client>
+	<gather class="com.briup.environment.clientimpl.GatherImpl">
+		<src-file>file/radwtmp.txt</src-file>
+		<record-file>src/record</record-file>
+	</gather>
+	<logger class="com.briup.environment.util.LogImpl">
+		<log-properties>file/log4j.properties</log-properties>
+	</logger>
+</woss>
